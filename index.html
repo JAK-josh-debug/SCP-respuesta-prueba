@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Maestro de Inteligencia Comercial - SCP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; scroll-behavior: smooth; }
+        .section-card { background: white; border-radius: 20px; box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.04); margin-bottom: 2.5rem; padding: 2.5rem; border: 1px solid #f1f5f9; transition: transform 0.3s ease; }
+        .section-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08); }
+        h1, h2, h3 { color: #1e3a8a; }
+        .badge { background: #dbeafe; color: #1e40af; padding: 6px 14px; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+        .grid-custom { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .highlight { color: #b91c1c; font-weight: 600; }
+        
+        /* Interactive Steps */
+        .quote-flow-step { position: relative; padding-left: 3rem; margin-bottom: 1.5rem; }
+        .quote-flow-step::before { content: ''; position: absolute; left: 0; top: 0; width: 32px; height: 32px; background: #1e40af; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 13px; font-weight: bold; box-shadow: 0 4px 10px rgba(30, 64, 175, 0.3); }
+        .step-1::before { content: '1'; }
+        .step-2::before { content: '2'; }
+        .step-3::before { content: '3'; }
+        .step-4::before { content: '4'; }
+        
+        /* Dashboard Elements */
+        .dash-metric { background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border: 1px solid #e2e8f0; border-radius: 16px; padding: 1.5rem; text-align: center; }
+        .progress-bar { height: 10px; background: #e2e8f0; border-radius: 5px; overflow: hidden; margin: 10px 0; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #3b82f6, #2563eb); border-radius: 5px; transition: width 1s ease-in-out; }
+        
+        .code-block { background: #1e293b; border-radius: 12px; padding: 1.5rem; font-family: 'Fira Code', monospace; font-size: 0.85rem; color: #f1f5f9; overflow-x: auto; }
+        .supply-tag { background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 8px; padding: 4px 10px; font-size: 0.7rem; font-weight: 600; color: #64748b; }
+    </style>
+</head>
+<body class="p-4 md:p-12">
+
+    <header class="max-w-6xl mx-auto mb-16 text-center">
+        <div class="flex justify-center mb-6">
+            <span class="badge">Estrategia Global SCP 2026</span>
+        </div>
+        <h1 class="text-5xl font-extrabold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-900 to-blue-600">
+            Unidad de Inteligencia Comercial & Suministro
+        </h1>
+        <p class="text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed">
+            Ecosistema automatizado de alto rendimiento para la optimización de márgenes, prospección predictiva y reducción estructural de costos.
+        </p>
+    </header>
+
+    <main class="max-w-6xl mx-auto">
+
+        <!-- 0. PREMISA ESTRATÉGICA -->
+        <div class="section-card border-t-8 border-t-red-500">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="p-3 bg-red-100 rounded-2xl text-red-600">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold">0. Premisa: Logística Dicta Rentabilidad</h2>
+                    <p class="text-slate-500 text-sm italic">"No vendemos papel, vendemos eficiencia entregada."</p>
+                </div>
+            </div>
+            <p class="text-slate-600 mb-8 leading-relaxed">
+                Antes de capturar el primer prospecto, definimos la <strong>Matriz de Costos Dinámicos</strong>. El precio B2B en SCP está indexado a la eficiencia logística y el volumen de carga, garantizando un EBITDA positivo en cada despacho.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:bg-white hover:shadow-md transition">
+                    <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-sm mb-4">📍</div>
+                    <p class="text-sm font-bold text-slate-800 mb-2">Geofencing Logístico</p>
+                    <p class="text-xs text-slate-500 leading-relaxed">Sistemas de precios automáticos basados en el radio de entrega desde planta SCP.</p>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:bg-white hover:shadow-md transition">
+                    <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-sm mb-4">📊</div>
+                    <p class="text-sm font-bold text-slate-800 mb-2">Selección de Clústeres</p>
+                    <p class="text-xs text-slate-500 leading-relaxed">Prospección quirúrgica en zonas donde el flete impacta menos del 5% del valor.</p>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:bg-white hover:shadow-md transition">
+                    <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-sm mb-4">💰</div>
+                    <p class="text-sm font-bold text-slate-800 mb-2">Canal Directo</p>
+                    <p class="text-xs text-slate-500 leading-relaxed">Prioridad absoluta a Distribuidores y Cadenas de Hoteles para flujo de caja inmediato.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1. PROSPECCIÓN -->
+        <div class="section-card border-t-8 border-t-blue-600">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                1. Prospección Inteligente B2B
+            </h2>
+            <div class="grid-custom mb-8">
+                <div class="bg-blue-50/50 p-6 rounded-2xl border border-blue-100">
+                    <h3 class="font-bold text-sm mb-3 text-blue-800 uppercase tracking-widest">Metodología IA-Maps</h3>
+                    <p class="text-sm leading-relaxed">Uso de <strong>Google Maps API</strong> para filtrar bodegas industriales por m2. Cruzamos datos con distribuidores de químicos para ofrecerles la línea de papel como complemento natural a su catálogo.</p>
+                </div>
+                <div class="bg-blue-50/50 p-6 rounded-2xl border border-blue-100">
+                    <h3 class="font-bold text-sm mb-3 text-blue-800 uppercase tracking-widest">Fuentes de Verdad</h3>
+                    <p class="text-sm leading-relaxed">Registros Aduanales (importaciones de KCP/Copamex), Directorios de Cámaras de Comercio y validación directa mediante llamadas de "Mystery Buying".</p>
+                </div>
+            </div>
+            <div class="overflow-hidden rounded-2xl border border-slate-200">
+                <table class="w-full text-sm text-left">
+                    <thead class="bg-slate-50 text-slate-500 font-bold uppercase text-[10px] tracking-widest">
+                        <tr>
+                            <th class="p-4">Sector Estratégico</th>
+                            <th class="p-4 text-center">Consumo Mensual Est.</th>
+                            <th class="p-4">Justificación Logística</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-slate-600 divide-y divide-slate-100">
+                        <tr>
+                            <td class="p-4 font-semibold">Distribuidores de Higiene (Centro)</td>
+                            <td class="p-4 text-center font-bold text-blue-700">25 - 40 Tons</td>
+                            <td class="p-4 text-xs italic">Cercanía a planta; optimización de flete al 100%.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-semibold">Cadenas de Hotelería (Riviera)</td>
+                            <td class="p-4 text-center font-bold text-blue-700">15 - 20 Tons</td>
+                            <td class="p-4 text-xs italic">Venta directa sin intermediarios; margen bruto superior.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 2. COMPETENCIA -->
+        <div class="section-card border-t-8 border-t-amber-500">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                <svg class="w-7 h-7 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                2. Inteligencia de Competencia
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Analizamos a los gigantes (<strong>KCP, Georgia-Pacific, Copamex</strong>) no para igualarlos, sino para atacar sus debilidades operativas:
+                    </p>
+                    <div class="flex items-start gap-3 p-3 bg-amber-50 rounded-xl">
+                        <span class="text-xl">🐢</span>
+                        <div class="text-xs"><strong>Lentitud:</strong> Tardan 48h-72h en cotizar pedidos especiales. SCP lo hace en 5 minutos.</div>
+                    </div>
+                    <div class="flex items-start gap-3 p-3 bg-amber-50 rounded-xl">
+                        <span class="text-xl">📜</span>
+                        <div class="text-xs"><strong>Procesos Rígidos:</strong> Sus líneas de crédito son burocráticas. SCP ofrece esquemas ágiles y personalizados.</div>
+                    </div>
+                </div>
+                <div class="bg-slate-900 rounded-2xl p-6 text-white">
+                    <h3 class="text-xs font-bold text-amber-400 uppercase tracking-widest mb-4">Oportunidad Estratégica</h3>
+                    <p class="text-sm font-light leading-relaxed italic">
+                        "La ventaja de SCP no es el volumen, es la **velocidad**. Usamos la IA para detectar quiebres de stock en sus distribuidores y entrar como la alternativa de suministro garantizado en menos de 24h."
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. INTELIGENCIA DE PROVEEDURÍA (EXPANDIDA) -->
+        <div class="section-card border-t-8 border-t-emerald-600" id="proveeduria">
+            <div class="flex justify-between items-start mb-8">
+                <div>
+                    <h2 class="text-2xl font-bold flex items-center gap-3">
+                        <svg class="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                        3. Inteligencia de Proveeduría: Meta Reducción 8%
+                    </h2>
+                    <p class="text-slate-500 text-sm mt-1">Plan estratégico para la optimización del costo de materia prima (MP).</p>
+                </div>
+                <div class="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-xl font-extrabold text-xl">-8%</div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-800 mb-3 flex items-center gap-2">
+                            <span class="w-2 h-2 bg-emerald-500 rounded-full"></span> Búsqueda de Proveedores Alternativos
+                        </h4>
+                        <div class="grid grid-cols-1 gap-2">
+                            <div class="p-3 bg-slate-50 rounded-xl text-xs">
+                                <strong>Mercado LATAM:</strong> Molinos medianos en <strong>Brasil y Chile</strong> para celulosa virgen (Short Fiber), evitando los brokers de EE.UU.
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-xl text-xs">
+                                <strong>Economía Circular:</strong> Alianzas con centros de reciclaje industrial masivo para suministro de blanco de archivo (materia prima para higiénico tradicional).
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-xl text-xs">
+                                <strong>Importación Directa:</strong> Uso de datos de Panjiva/ImportGenius para contactar plantas directamente en Asia (Paper Jumbo Rolls).
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-800 mb-3 flex items-center gap-2">
+                            <span class="w-2 h-2 bg-emerald-500 rounded-full"></span> Evaluación de Riesgo Logístico
+                        </h4>
+                        <p class="text-xs text-slate-600 mb-3 leading-relaxed">
+                            No compramos solo por precio, compramos por <strong>continuidad</strong>. Evaluamos:
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="supply-tag">Lead Time Variance</span>
+                            <span class="supply-tag">Port Congestion (Santos/Manzanillo)</span>
+                            <span class="supply-tag">Highway Insecurity (GPS Risk)</span>
+                            <span class="supply-tag">Weather Seasonality</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-emerald-50 rounded-2xl p-6 border border-emerald-100">
+                    <h4 class="text-sm font-bold text-emerald-900 mb-4 uppercase text-center">Comparativa de Calidad Técnica</h4>
+                    <div class="space-y-4">
+                        <div class="bg-white p-3 rounded-xl shadow-sm">
+                            <div class="flex justify-between text-[11px] mb-1"><span>Gramaje (gr/m2)</span> <span class="font-bold">Precisión ± 1%</span></div>
+                            <div class="w-full bg-slate-100 h-1.5 rounded-full"><div class="bg-emerald-500 h-1.5 rounded-full" style="width: 95%"></div></div>
+                        </div>
+                        <div class="bg-white p-3 rounded-xl shadow-sm">
+                            <div class="flex justify-between text-[11px] mb-1"><span>Capacidad de Absorción (gr/gr)</span> <span class="font-bold">Target: 7.5x</span></div>
+                            <div class="w-full bg-slate-100 h-1.5 rounded-full"><div class="bg-emerald-500 h-1.5 rounded-full" style="width: 88%"></div></div>
+                        </div>
+                        <div class="bg-white p-3 rounded-xl shadow-sm">
+                            <div class="flex justify-between text-[11px] mb-1"><span>Resistencia a la Tracción (Wet/Dry)</span> <span class="font-bold">Cumplimiento ISO</span></div>
+                            <div class="w-full bg-slate-100 h-1.5 rounded-full"><div class="bg-emerald-500 h-1.5 rounded-full" style="width: 92%"></div></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 pt-6 border-t border-emerald-200">
+                        <h4 class="text-xs font-bold text-emerald-800 mb-4 text-center">KPIs de Abastecimiento</h4>
+                        <div class="grid grid-cols-2 gap-3 text-center">
+                            <div class="p-2 bg-emerald-600 text-white rounded-lg">
+                                <p class="text-[9px] uppercase font-bold">Landed Cost</p>
+                                <p class="text-sm font-bold">$/Ton</p>
+                            </div>
+                            <div class="p-2 bg-emerald-600 text-white rounded-lg">
+                                <p class="text-[9px] uppercase font-bold">Supply Adherence</p>
+                                <p class="text-sm font-bold">98.5%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. TECNOLOGÍA E IA -->
+        <div class="section-card border-t-8 border-t-indigo-600">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                <svg class="w-7 h-7 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+                4. Stack Tecnológico & Automatización
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div class="space-y-4">
+                    <h3 class="font-bold text-slate-800 uppercase text-xs tracking-widest">Orquestación de Procesos</h3>
+                    <div class="grid grid-cols-1 gap-3">
+                        <div class="p-4 border border-slate-200 rounded-2xl flex items-center gap-4 hover:border-blue-500 transition cursor-help">
+                            <span class="text-2xl">⚡</span>
+                            <div>
+                                <p class="text-sm font-bold">n8n</p>
+                                <p class="text-[11px] text-slate-500">Eficiencia de costos en flujos masivos de datos internos.</p>
+                            </div>
+                        </div>
+                        <div class="p-4 border border-slate-200 rounded-2xl flex items-center gap-4 hover:border-red-500 transition cursor-help">
+                            <span class="text-2xl">🏗️</span>
+                            <div>
+                                <p class="text-sm font-bold">Make</p>
+                                <p class="text-[11px] text-slate-500">Soporte cloud y conectividad nativa con HubSpot/Kommo.</p>
+                            </div>
+                        </div>
+                        <div class="p-4 border border-slate-200 rounded-2xl flex items-center gap-4 hover:border-purple-500 transition cursor-help">
+                            <span class="text-2xl">🧠</span>
+                            <div>
+                                <p class="text-sm font-bold">Gemini 2.5 Flash</p>
+                                <p class="text-[11px] text-slate-500">IA multimodal para análisis de texto y validación de imágenes de producto.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-indigo-900 text-white rounded-3xl p-8 flex flex-col justify-center">
+                    <h3 class="font-bold mb-4 uppercase text-xs text-indigo-300">Análisis Predictivo</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center border-b border-indigo-700 pb-2">
+                            <span class="text-sm font-medium">BigQuery ML</span>
+                            <span class="text-[10px] bg-indigo-500 px-2 py-1 rounded font-bold">DEMANDA</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-indigo-700 pb-2">
+                            <span class="text-sm font-medium">TensorFlow TimeSeries</span>
+                            <span class="text-[10px] bg-indigo-500 px-2 py-1 rounded font-bold">PRECIOS MP</span>
+                        </div>
+                    </div>
+                    <p class="text-[11px] mt-6 leading-relaxed opacity-70 italic">
+                        "Predecimos el alza de la celulosa con 15 días de antelación para bloquear inventario a precio bajo."
+                    </p>
+                </div>
+            </div>
+
+            <h3 class="font-bold text-slate-800 mb-4 uppercase text-xs tracking-widest">Automatización Mensual via Triggers</h3>
+            <div class="p-6 bg-slate-100 rounded-2xl grid md:grid-cols-3 gap-6">
+                <div class="text-center">
+                    <p class="text-[10px] font-bold text-blue-600 mb-2 uppercase">Trigger Logístico</p>
+                    <p class="text-xs text-slate-700">IF stock < 15% AND price < avg THEN buy();</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-[10px] font-bold text-blue-600 mb-2 uppercase">Trigger Comercial</p>
+                    <p class="text-xs text-slate-700">IF score > 90 THEN send_personalized_offer();</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-[10px] font-bold text-blue-600 mb-2 uppercase">Trigger Competencia</p>
+                    <p class="text-xs text-slate-700">IF comp_drops > 15% THEN launch_aggressive_ads();</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- COTIZADOR IA -->
+        <div class="section-card border-t-8 border-t-indigo-500">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                <svg class="w-7 h-7 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/></svg>
+                Cotizador Inteligente SCP
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div class="p-6 bg-indigo-50 rounded-2xl border border-indigo-100">
+                    <h3 class="font-bold text-indigo-900 mb-2 italic">Portal Externo (Cliente B2B)</h3>
+                    <p class="text-xs text-indigo-700 leading-relaxed mb-4">Interfaz autogestionable que genera Órdenes de Compra (OC) vinculantes considerando el flete en tiempo real.</p>
+                    <button class="w-full bg-indigo-600 text-white text-xs font-bold py-3 rounded-xl shadow-lg hover:bg-indigo-700 transition">Simular Orden de Compra</button>
+                </div>
+                <div class="p-6 bg-slate-100 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-slate-900 mb-2 italic">Consola Interna (Comercial)</h3>
+                    <p class="text-xs text-slate-700 leading-relaxed">Simulador de margen EBITDA por pedido. Ajuste dinámico de precios según costo de MP del día.</p>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between gap-4">
+                <div class="quote-flow-step step-1"><p class="text-[11px] font-bold">Configuración Pedido</p></div>
+                <div class="quote-flow-step step-2"><p class="text-[11px] font-bold">IA Logística</p></div>
+                <div class="quote-flow-step step-3"><p class="text-[11px] font-bold">Generación OC PDF</p></div>
+                <div class="quote-flow-step step-4" style="border: none;"><p class="text-[11px] font-bold text-green-700">Recurrencia (1-Click)</p></div>
+            </div>
+        </div>
+
+        <!-- 5. DASHBOARD EJECUTIVO -->
+        <div class="section-card border-t-8 border-t-blue-500">
+            <div class="flex justify-between items-center mb-10">
+                <h2 class="text-2xl font-bold flex items-center gap-3">
+                    <svg class="w-7 h-7 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    5. Dashboard Mensual de Dirección
+                </h2>
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
+                    <span class="text-xs font-bold text-slate-400">EN VIVO</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+                <div class="dash-metric">
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Ahorro Estructural MP</p>
+                    <p class="text-3xl font-extrabold text-blue-600">5.4%</p>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 67.5%"></div></div>
+                </div>
+                <div class="dash-metric">
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Ventas Proyectadas (Tons)</p>
+                    <p class="text-3xl font-extrabold text-slate-800">142.5</p>
+                    <p class="text-[10px] text-blue-500 mt-2 font-bold uppercase tracking-tighter">12 LEADS AAA ACTIVOS</p>
+                </div>
+                <div class="dash-metric">
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Margen Logístico Net</p>
+                    <p class="text-3xl font-extrabold text-green-600">18.4%</p>
+                    <p class="text-[10px] text-slate-500 mt-2 italic">Optimizado vía Geofencing</p>
+                </div>
+                <div class="dash-metric">
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Price Index vs Mercado</p>
+                    <p class="text-3xl font-extrabold text-red-500">0.92</p>
+                    <p class="text-[10px] text-slate-500 mt-2 italic font-medium">Competitividad Garantizada</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="p-6 bg-slate-50 rounded-3xl border border-slate-100">
+                    <h3 class="text-xs font-bold text-slate-800 mb-6 uppercase tracking-widest text-center">Top Prospectos (IA Scoring)</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-4 bg-white rounded-2xl shadow-sm border-l-8 border-green-500">
+                            <span class="text-xs font-bold">Hotel Grand Riviera</span> <span class="text-xs font-black text-green-600">96/100</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-white rounded-2xl shadow-sm border-l-8 border-green-500">
+                            <span class="text-xs font-bold">CleanMex Distribuidores</span> <span class="text-xs font-black text-green-600">89/100</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 bg-blue-900 text-white rounded-3xl">
+                    <h3 class="text-xs font-bold mb-6 uppercase tracking-widest opacity-80 text-center">Inteligencia Aduanal</h3>
+                    <div class="bg-blue-800 p-4 rounded-2xl mb-4 border border-blue-700">
+                        <p class="text-[10px] font-black underline mb-2 tracking-widest text-blue-300">ALERT: STOCK-OUT COMPETENCIA</p>
+                        <p class="text-[11px] italic leading-relaxed opacity-90">KCP muestra una caída del 22% en importación de celulosa virgen. Oportunidad de entrada agresiva en sector institucional.</p>
+                    </div>
+                    <div class="flex justify-between text-[11px] px-2 font-mono">
+                        <span>Price Celulosa (BR)</span> <span class="font-bold text-green-400">$1.24 ▼ 2%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. INGENIERÍA DE DATOS -->
+        <div class="section-card border-t-8 border-t-slate-800">
+            <h2 class="text-2xl font-bold mb-8 flex items-center gap-3">
+                <svg class="w-7 h-7 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                6. Ingeniería de Datos e Inteligencia Avanzada
+            </h2>
+            <div class="mb-10">
+                <h3 class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-4 italic">6.1 Modelo de Scoring Predictivo</h3>
+                <div class="code-block text-center font-bold text-blue-300">
+                    P = (Consumo_Est * 0.3) + (Margen_Logístico * 0.4) + (Historial_Pago * 0.2) + (Afinidad_SKU * 0.1)
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-4 italic">6.2 Estructura DB (SCP_DB)</h3>
+                    <div class="space-y-3">
+                        <div class="p-3 border rounded-xl bg-slate-50 text-[10px] font-mono"><strong>Table Prospects:</strong> [ID, Geo, Consumo_Est, SKU_Pref, Score]</div>
+                        <div class="p-3 border rounded-xl bg-slate-50 text-[10px] font-mono"><strong>Table Market:</strong> [ID, Comp_Price, Import_Vol, Sync_Date]</div>
+                        <div class="p-3 border rounded-xl bg-slate-50 text-[10px] font-mono"><strong>Table VMI:</strong> [SKU, Stock_Real, Cost_Spot, Prov_ID]</div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-4 italic">6.3 Consumo Estimado</h3>
+                    <div class="code-block text-[11px] leading-relaxed">
+                        // Estimación Hotelera SCP<br>
+                        Consumo_Kg = (Num_Habitaciones * Ocupación * 150g_persona) * 30.4;<br>
+                        <span class="text-slate-500">// Nota: El factor cambia según SKU (Toalla vs Higiénico).</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. ESCALABILIDAD -->
+        <div class="section-card border-t-8 border-t-slate-400 bg-slate-50">
+            <h2 class="text-2xl font-bold mb-8 flex items-center gap-3">
+                <svg class="w-7 h-7 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                7. Escalabilidad Global & Visión de Futuro
+            </h2>
+            <div class="grid-custom">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 hover:border-blue-500 transition">
+                    <h3 class="font-bold text-blue-800 mb-4 text-sm uppercase tracking-widest italic">Portal de Proveedores (VMI)</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                        Apertura de inventario en tiempo real para proveedores estratégicos. Generamos una <strong>subasta inversa</strong> constante: los proveedores ven nuestro ritmo de consumo y compiten por rellenar stock con mejores precios y créditos extendidos.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 hover:border-blue-500 transition">
+                    <h3 class="font-bold text-blue-800 mb-4 text-sm uppercase tracking-widest italic">Expansión B2C & Marca</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                        Lanzamiento de plataforma e-commerce bajo el mismo motor logístico inteligente. SCP llega a los hogares con la eficiencia de suministro de un distribuidor institucional, escalando el valor de marca.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 hover:border-blue-500 transition">
+                    <h3 class="font-bold text-blue-800 mb-4 text-sm uppercase tracking-widest italic">Módulo de Exportación</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                        Réplica del modelo de inteligencia de aduanas para mercados internacionales. Detectamos debilidades de stock en países vecinos y expandimos SCP basados en datos reales de demanda insatisfecha.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="max-w-6xl mx-auto mt-16 pb-24 text-center border-t border-slate-200 pt-10">
+        <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] italic">SCP Intelligence Unit - Estrategia Global 2026 - Confidencial</p>
+    </footer>
+
+</body>
+</html>
